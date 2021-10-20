@@ -9,3 +9,8 @@ services:
     volumes:
        - /app/node_modules
        - .:/app
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ["npm", "run", "test"]
